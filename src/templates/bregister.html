@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+Bussiness Customer Registration
+{% endblock %}
+{% block script %}
+{% endblock %}
+{% block content %}
+{% include 'nav.html' %}
+<div class="container" align="center">
+<h1> {{f}}  {{msg}} {{try}}</h1>
+
+<form method="post">
+      {% csrf_token %}
+  <table>
+
+    <tr>
+      <td>Bussiness Customer ID</td>
+      <td><input type="text"name="bcid" required></td>
+    </tr>
+
+    <tr>
+      <td>Name</td>
+      <td><input type="text"name="cname" required></td>
+    </tr>
+
+    <tr>
+      <td>Email</td>
+      <td><input type="email" name="email" required></td>
+    </tr>
+
+    <tr>
+      <td>Address</td>
+      <td><input type="text"name="add"></td>
+    </tr>
+
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="p" required></td>
+    </tr>
+
+    <tr>
+      <td>Confirm Password</td>
+      <td><input type="password" name="c" required></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td><input type="submit"  value="Register"> &nbsp;<input type="reset"  value="Reset"></td>
+    </tr>
+
+  </table>
+
+</form>
+
+<p> Already have an account <a href="{% url 'login_bcustomer' %}">Login Here</a> </p>
+</div>
+{% endblock %}

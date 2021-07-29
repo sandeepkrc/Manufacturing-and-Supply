@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+
+     input[type="text"],
+     input[type="password"]{
+         text-align: center;
+         border: none;
+         outline: none;
+         font-size: 18px;
+         height: 35px;
+         background-color: transparent;
+         color: white;
+         border-bottom: rgb(2, 2, 2);
+     }
+     ::placeholder{
+         color: lightgrey;
+     }
+     </script>
+{% endblock %}
+
+{% block content %}
+
+{% include "nav.html" %}
+
+<div class="form" align="center" mt-6>
+      <h2>  {{rs}}Login {{msg}} ! </h2>
+      <form action="{% url 'login_bcustomer' %}" method="post">
+        {% csrf_token %}
+          <input type="text" placeholder="Username" name="un" required>
+          <br><br>
+          <input type="password" placeholder="Password" name= "pw" required>
+          <br><br>
+          <input type="submit" value="Log in">
+      </form>
+
+        <p> Don't have account <a href="{% url 'register_bcustomer' %}">Register Here</a> </p>
+  </div>
+
+{% endblock %}

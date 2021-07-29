@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block script %}
+
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">R C M</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'home' %}">Home</a></li>
+
+        <li><a href="{% url 'view_product' %}">View Products </a></li>
+        <li><a href="{% url 'payment' %}">Pay  </a></li>
+
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'register_product' %}"> Register Product </a></li>
+
+        <li><a href="{% url 'product_delete' %}">Delete Products </a></li>
+
+          {% endif %}
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'register_bcustomer' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container" mt-4 align="center">
+<h1> WELCOME TO HOME PAGE </h1>
+</div>
+{% endblock %}

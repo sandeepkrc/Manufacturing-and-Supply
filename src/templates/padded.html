@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Added
+{% endblock %}
+{% block script %}
+
+{% endblock %}
+{% block content %}
+{% include 'nav.html' %}
+<div class="container" mt-4 align="center">
+<h1>
+Product Added Successfully</h1>
+<a href="{% url 'register_product' %}">Add Another</a>
+<a href="{% url 'view_product' %}">View Product</a>
+</div>
+{% endblock %}

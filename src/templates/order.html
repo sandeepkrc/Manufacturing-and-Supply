@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+View Product
+{% endblock %}
+{% block script %}{% endblock %}
+{% block content %}
+{% include "nav.html" %}
+<div class="container" mt-4 align="center">
+  {{msg}}
+<h1> All PRODUCTS</h1>
+<!-- <h2><a href="ordered_product">Order a Product</a></h2> -->
+
+
+<table border="red">
+    <th>Product id</th>
+    <th>Product Nmae</th>
+    <th>Product cost</th>
+    <th>M.F.D</th>
+    <th> EXP.D</th>
+    <th>Quantity</th>
+      {% if user.is_authenticated %}
+    <th>Action</th>
+      {% endif %}
+{% for p in product %}
+<tr>
+<td>{{ p.id }}</td>
+<td>{{ p.pname}}</td>
+
+<td>{{ p.pcost}}</td>
+<td>{{ p.pmfd}}</td>
+<td>{{ p.pexpd}}</td>
+<td>{{ p.quantity}}</td>
+  {% if user.is_authenticated %}
+<td><a href="update_product/{{p.id}}/">Update</a>
+  {% endif %}
+  <!-- <td><a href="ordered_product/{{p.id}}/">Order</a> -->
+
+{% endfor %}
+</tr>
+</table>
+</div>
+
+{% endblock %}

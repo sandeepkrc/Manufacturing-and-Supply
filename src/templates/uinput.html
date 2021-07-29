@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+UPDATE{% endblock %}
+{% block script %}
+
+{% endblock %}
+{% block content %}
+{% include 'nav.html' %}
+<div class="container" mt-4 align="center">
+<h1> WELCOME TO UPDATE PRODUCT BY PID </h1>
+<form method="post" action="/">
+  {% csrf_token %}
+
+
+  Product id<input type="text" name="ncost">
+  <input type="submit" value="UUP">
+
+
+</form>
+</div>
+{% endblock %}

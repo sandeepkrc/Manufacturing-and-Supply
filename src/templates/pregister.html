@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+Product Registration
+{% endblock %}
+{% block content %}
+{% include "nav.html" %}
+<div class="container" mt-4 align="center">
+<h1> WELCOME TO Product Registration</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td>Product ID</td>
+        <td><input type="text" name="id"><br></td>
+      </tr>
+      <tr>
+        <td>Product Name</td>
+        <td><input type="text" name="name"><br></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td><input type="text" name="cost"><br></td>
+      </tr>
+      <tr>
+        <td>Expiary Date</td>
+        <td><input type="date" name="exp"><br></td>
+      </tr>
+
+      <tr>
+        <td>Product Quantity</td>
+        <td><input type="text" name="qty"><br></td>
+      </tr>
+
+        <tr>
+          <td></td>
+          <td>
+          <input type="submit" value="Register">
+          </td>
+        </tr>
+    </table>
+
+</form>
+</div>
+{% endblock %}
